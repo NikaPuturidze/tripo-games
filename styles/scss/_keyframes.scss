@@ -53,6 +53,21 @@
     animation: #{$animation-name} 1s ease-out forwards;
 }
 
+@mixin fade-scale {
+    @keyframes fade-scale {
+        from {
+            opacity: 0.8;
+            transform: scale(0.96) translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    animation: fade-scale 1s ease-out forwards;
+}
+
 .slideLeft {
     @include slide("left");
 }
@@ -67,4 +82,8 @@
 
 .slideDown {
     @include slide("down");
+}
+
+.scale {
+    @include fade-scale;
 }
