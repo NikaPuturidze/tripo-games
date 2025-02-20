@@ -1,0 +1,25 @@
+@use './vars' as *;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Suez+One&display=swap');
+@font-face {
+  font-family: 'Reklame Script';
+  src: url('../../fonts/Reklame.otf') format('truetype');
+}
+
+@mixin robotoFontThin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+@mixin robotoFontBold {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+
+@mixin suezFont {
+    font-family: "Suez One", serif;
+}
+
+@mixin reklamaFont {
+  font-family: 'Reklame Script', cursive;
+}

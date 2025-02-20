@@ -1,0 +1,70 @@
+@mixin slide($direction) {
+
+    $from: 30%;
+    $to: 0;
+    
+    @if $direction == "down" {
+        $from: -30%;
+        $to: 0;
+    }
+    @else if $direction == "right" {
+        $from: -30%;
+        $to: 0;
+    }
+
+    $animation-name: fade-#{$direction};
+
+    @keyframes #{$animation-name} {
+        from {
+            @if $direction == "down" {
+                transform: translateY($from);
+            }
+            @else if $direction == "up" {
+                transform: translateY($from);
+            }
+            @else if $direction == "left" {
+                transform: translateX($from);
+            }
+            @else if $direction == "right" {
+                transform: translateX($from);
+            }
+
+            opacity: 0;
+        }
+
+        to {
+            @if $direction == "down" {
+                transform: translateY($to);
+            }
+            @else if $direction == "up" {
+                transform: translateY($to);
+            }
+            @else if $direction == "left" {
+                transform: translateX($to);
+            }
+            @else if $direction == "right" {
+                transform: translateX($to);
+            }
+
+            opacity: 1;
+        }
+    }
+
+    animation: #{$animation-name} 1s ease-out forwards;
+}
+
+.slideLeft {
+    @include slide("left");
+}
+
+.slideRight {
+    @include slide("right");
+}
+
+.slideUp {
+    @include slide("up");
+}
+
+.slideDown {
+    @include slide("down");
+}

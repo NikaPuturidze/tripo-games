@@ -1,0 +1,13 @@
+{
+    "liveSassCompile.settings.includeItems": [],
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.showOutputWindowOn": "Error",
+    "liveSassCompile.settings.watchOnLaunch": true,
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/styles/css"
+        }
+    ]
+}
