@@ -1,20 +1,30 @@
-@use './vars' as *;
+@use "./vars" as *;
 
 *,
 *::before,
 *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    user-select: none;
-    outline: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+  outline: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+a:visited {
+  color: transparent;
+}
+
+a {
+  color: $black;
 }
 
 body {
-    min-width: calc(320px - 15px);
-    overflow-x: hidden;
-    background-color: $defaultBackgroundColor;
-    padding-block-end: 64px;
+  min-width: calc(320px - 15px);
+  overflow-x: hidden;
+  background-color: $defaultBackgroundColor;
+  padding-block-end: 64px;
 }

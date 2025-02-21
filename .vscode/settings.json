@@ -9,5 +9,6 @@
             "extensionName": ".min.css",
             "savePath": "/styles/css"
         }
-    ]
+    ],
+    "liveServer.settings.host": "0.0.0.0"
 }

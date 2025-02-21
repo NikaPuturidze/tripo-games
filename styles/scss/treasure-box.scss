@@ -1,0 +1,848 @@
+@use "./mixins" as *;
+@use "./vars" as *;
+@use "./keyframes" as *;
+@use "./global" as *;
+
+main {
+  background-color: $defaultBackgroundColor;
+
+  .header {
+    z-index: 9999999;
+    width: 100%;
+    height: 67px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include slide("down");
+    padding-inline: 99px;
+
+    @media (width <=672px) {
+      padding-inline: 18px;
+    }
+
+    @media (width <=1010px) {
+      .header-right {
+        display: none !important;
+      }
+
+      .group {
+        display: grid !important;
+      }
+    }
+
+    .header-left {
+      display: flex;
+      justify-content: center;
+      height: inherit;
+
+      .company-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 166px;
+        height: 63px;
+        background-color: $red;
+        border-radius: 0 0 10px 10px;
+
+        @media (width <=672px) {
+          height: 50px !important;
+          width: 140px;
+        }
+
+        & a {
+          @include reklamaFont;
+          text-decoration: none;
+          font-size: 26px;
+          height: 32px;
+          color: $white;
+          line-height: normal;
+          position: relative;
+          top: -3px;
+
+          @media (width <=672px) {
+            font-size: 22px !important;
+            position: static !important;
+          }
+        }
+      }
+    }
+
+    .header-right {
+      display: flex;
+      justify-content: center;
+      height: 60px;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 6px 3px 12px 3px rgba($red, 0.08);
+      overflow: hidden;
+
+      .header-items {
+        display: flex;
+        height: inherit;
+        cursor: pointer;
+        background-color: $white;
+
+        .games {
+          transition: all 0.3s ease-in-out;
+          border: 0 !important;
+          width: 106px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &:hover {
+            background-color: $red;
+
+            & span {
+              color: $white;
+            }
+
+            .g-selector {
+              display: flex;
+            }
+          }
+
+          .g-selector {
+            position: absolute;
+            display: none;
+            flex-direction: column;
+            height: 120px;
+            top: 60px;
+            border-radius: 0 0 6px 6px;
+            overflow: hidden;
+
+            .to {
+              height: 40px;
+              width: 106px;
+              background-color: $white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 0.3s ease-in-out;
+
+              &:last-child {
+                background-color: $red;
+                color: $white;
+              }
+
+              &:hover {
+                background-color: $red;
+                color: $white;
+              }
+            }
+          }
+        }
+
+        .to-home {
+          background-color: $red;
+          border-radius: 0 0 0 10px;
+          color: $white;
+          width: 106px;
+          height: inherit;
+          cursor: pointer;
+        }
+
+        .to-career {
+          transition: all 0.3s ease-in-out;
+          width: 116px;
+          height: inherit;
+
+          &:hover {
+            background-color: $red;
+            color: $white;
+          }
+        }
+
+        .to-about {
+          transition: all 0.3s ease-in-out;
+          width: 104px;
+          height: inherit;
+
+          &:hover {
+            background-color: $red;
+            color: $white;
+          }
+        }
+
+        .to-contact {
+          transition: all 0.3s ease-in-out;
+          width: 117px;
+          height: inherit;
+          border-radius: 0 0 10px 0;
+
+          &:hover {
+            background-color: $red;
+            color: $white;
+          }
+        }
+
+        & a,
+        span {
+          @include robotoFontThin;
+          list-style: none;
+          height: inherit;
+          color: $darkBlue;
+          font-weight: 400;
+
+          & li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .current {
+            border-radius: 0 0 0 10px;
+          }
+
+          .last {
+            border-radius: 0 0 10px 0;
+          }
+        }
+      }
+    }
+
+    .group {
+      display: none;
+      place-items: center;
+      height: 50px;
+      width: 50px;
+      min-width: 50px;
+      border: none;
+      background-color: $red;
+      cursor: pointer;
+      border-radius: 0 0 10px 10px;
+
+      .grid {
+        display: grid;
+        place-items: center;
+        gap: 6px;
+
+        & span {
+          display: flex;
+          height: 3px;
+          width: 30px;
+          border-radius: 4px;
+          transition: all 0.3s ease;
+
+          & span {
+            background-color: $white;
+          }
+        }
+
+        & span:nth-child(1) {
+          justify-content: flex-start;
+
+          & span {
+            width: 50%;
+          }
+        }
+
+        & span:nth-child(2) {
+          & span {
+            width: 100%;
+          }
+        }
+
+        & span:nth-child(3) {
+          justify-content: flex-end;
+
+          & span {
+            width: 50%;
+          }
+        }
+      }
+
+      .grid span:nth-child(1) {
+        & span {
+          transform: rotate(45deg) translateY(5.8px) translateX(7px);
+          width: 100%;
+        }
+      }
+
+      .grid span:nth-child(2) {
+        & span {
+          transform: scaleX(0);
+        }
+      }
+
+      .grid span:nth-child(3) {
+        & span {
+          transform: rotate(-45deg) translateY(-5.8px) translateX(7px);
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .section-intro {
+    width: 100%;
+    height: 703px;
+    margin-top: 208px;
+    background-size: cover;
+    background-image: url("../../img/treasure-box/treasure-box.avif");
+    background-repeat: no-repeat;
+    background-position-x: 15%;
+    background-attachment: fixed;
+    position: relative;
+    padding-inline: 99px;
+
+    @media (width <=1340px) {
+      background-position-x: 25%;
+    }
+
+    @media (width <=730px) {
+      background-position-x: 50%;
+    }
+
+    @media (width <=730px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-inline: 0px;
+      margin-top: 0px;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-width: 642px;
+      height: fit-content;
+      background-color: $white;
+      color: $darkBlue;
+      padding: 48px 52px;
+      gap: 24px;
+      border-radius: 24px;
+      position: absolute;
+      top: -128px;
+      box-shadow: 6px 3px 12px 3px rgba($red, 0.08);
+
+      @media (width <=1340px) {
+        display: flex;
+        justify-content: center;
+        max-width: 520px;
+        gap: 20px;
+      }
+
+      @media (width <=730px) {
+        position: static;
+        margin-inline: 24px;
+        padding: 36px 42px;
+        gap: 18px;
+      }
+
+      @media (width <=420px) {
+        padding: 24px 30px;
+        gap: 16px;
+      }
+
+      .game-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 24px;
+
+        @media (width <=400px) {
+          gap: 16px;
+        }
+
+        .img-wrapper {
+          padding: 5px;
+          border-radius: 20px;
+          box-shadow: 4px 2px 10px 2px rgba($red, 0.08);
+
+          & img {
+            border-radius: 20px;
+          }
+        }
+
+        .title-text {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          & span:first-child {
+            @include robotoFontBold;
+            font-size: 21px;
+          }
+
+          & span:last-child {
+            @include robotoFontThin;
+            font-size: 16px;
+          }
+        }
+      }
+
+      & h2 {
+        @include suezFont;
+        font-size: 48px;
+        line-height: 3.6rem;
+
+        @media (width <=1340px) {
+          font-size: 32px;
+          line-height: 2.8rem;
+        }
+
+        @media (width <=420px) {
+          font-size: 24px;
+          line-height: 2rem;
+        }
+      }
+
+      & p {
+        @include robotoFontThin;
+        font-size: 18px;
+        line-height: 1.8rem;
+
+        @media (width <=420px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .section-gallery {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 99px;
+    padding-block: 64px;
+    gap: 64px;
+
+    @media (width <=990px) {
+      padding-inline: 24px;
+      padding-block: 32px;
+      gap: 32px;
+    }
+
+    & span {
+      @include robotoFontBold;
+      color: $darkBlue;
+      font-size: 34px;
+
+      @media (width <=990px) {
+        font-size: 30px;
+      }
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 36px;
+
+      @media (width <=1300px) {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .img-wrapper {
+        display: flex;
+        border-radius: 24px;
+        max-width: 1147px;
+        width: 50%;
+        overflow: hidden;
+        box-shadow: 6px 3px 12px 3px rgba($red, 0.08);
+        cursor: pointer;
+
+        @media (width <=1300px) {
+          flex-direction: column;
+          border-radius: 20px;
+          width: 100%;
+        }
+
+        & img {
+          transition: all 0.3s ease-in-out;
+          width: 100%;
+
+          &:hover {
+            scale: 1.05;
+          }
+        }
+      }
+    }
+  }
+
+  .section-reviews {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 99px;
+    padding-block: 56px;
+    gap: 48px;
+
+    @media (width <=1250px) {
+      padding-inline: 24px;
+      padding-block: 32px;
+    }
+
+    .review-title {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+
+      @media (width <=564px) {
+        gap: 24px;
+        flex-direction: column-reverse;
+      }
+
+      .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 36px;
+        border-radius: 24px;
+        box-shadow: 6px 3px 12px 3px rgba($red, 0.08);
+        background-color: $white;
+
+        .wrap-red {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 4px 22px;
+          border-radius: 36px;
+          background-color: $red;
+          padding-inline-end: 4px;
+          padding-inline-start: 14px;
+          gap: 10px;
+
+          & img {
+            height: 15px;
+            width: 15px;
+          }
+
+          .wrap-white {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $white;
+            padding-inline: 32.5px;
+            border-radius: 36px;
+
+            & span {
+              @include robotoFontThin;
+              line-height: 35px;
+            }
+          }
+        }
+      }
+
+      & h2 {
+        @include suezFont;
+        font-size: 48px;
+
+        @media (width <=564px) {
+          font-size: 30px;
+        }
+      }
+    }
+
+    .reviews {
+      display: flex;
+      border: 1px solid $black;
+
+      @media (width <=1250px) {
+        flex-direction: column;
+      }
+
+      .review {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: max(6.5%, 32px) max(4.5%, 24px);
+        flex: 1;
+
+        @media (width <=1250px) {
+          &:nth-child(1) {
+            border-bottom: 1px solid $black;
+          }
+
+          &:nth-child(2) {
+            border-bottom: 1px solid $black;
+          }
+        }
+
+        @media (width > 1250px) {
+          &:nth-child(1) {
+            border-right: 1px solid $black;
+          }
+
+          &:nth-child(2) {
+            border-right: 1px solid $black;
+          }
+        }
+
+        .review-box {
+          max-width: 250px;
+
+          @media (width <=1250px) {
+            max-width: 500px;
+          }
+
+          & p {
+            @include robotoFontThin;
+            font-size: 16px;
+            line-height: 1.6rem;
+            margin-block-end: 12px;
+          }
+
+          & h3 {
+            @include robotoFontBold;
+            font-size: 21px;
+          }
+        }
+      }
+    }
+  }
+
+  .section-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 735px;
+    background-size: cover;
+    background-image: url("../../img/treasure-box/section-about.avif ");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+
+    @media (width <=1250px) {
+      background-position-x: center;
+    }
+
+    .about-gradient {
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background: rgb(218, 57, 43);
+      background: linear-gradient(113deg,
+          rgba(218, 57, 43, 0.65) 0%,
+          rgba(218, 57, 43, 0.65) 100%);
+    }
+
+    padding-inline: 24px;
+
+    & h2 {
+      @include suezFont;
+      font-size: 50px;
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      text-align: center;
+      color: $white;
+      margin-block-end: 16px;
+
+      @media (width <=900px) {
+        font-size: 32px;
+        max-width: 600px;
+      }
+    }
+
+    & p {
+      @include robotoFontThin;
+      font-size: 18px;
+      position: relative;
+      z-index: 2;
+      max-width: 580px;
+      text-align: center;
+      color: $white;
+      line-height: 1.65rem;
+
+      @media (width <=900px) {
+        font-size: 16px;
+        max-width: 440px;
+      }
+    }
+  }
+
+  .section-download {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-inline: 24px;
+
+    .play {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 568px;
+      height: 220px;
+      border-radius: 20px;
+      background-color: $white;
+      margin-block-start: 72px;
+      padding-block: 12px;
+      box-shadow: 6px 3px 12px 3px rgba($red, 0.08);
+
+      & h2 {
+        @include suezFont;
+        font-size: 50px;
+        color: $darkBlue;
+
+        @media (width <=948px) {
+          font-size: 40px;
+        }
+      }
+
+      .source {
+        gap: 16px;
+        display: flex;
+
+        @media (width <=948px) {
+          flex-direction: column;
+        }
+
+        & img {
+          cursor: pointer;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-inline: 190px;
+  overflow-x: hidden;
+
+  @media (width <=1440px) {
+    padding-inline: 48px;
+  }
+
+  @media (width <=948px) {
+    padding-inline: 24px;
+  }
+
+  .company-name-b {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 166px;
+    height: 63px;
+    background-color: $red;
+    border-radius: 0 0 10px 10px;
+
+    & a {
+      @include reklamaFont;
+      text-decoration: none;
+      font-size: 26px;
+      height: 32px;
+      color: $white;
+      line-height: normal;
+      position: relative;
+      top: -3px;
+    }
+  }
+
+  & h3 {
+    @include robotoFontThin;
+    font-size: 24px;
+    margin-bottom: 20px;
+
+    @media (width <=416px) {
+      text-align: center;
+    }
+  }
+
+  .hl {
+    height: 1px;
+    background-color: $black;
+    width: 100%;
+  }
+
+  .footer-d {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-block: 36px;
+
+    @media (width <=416px) {
+      flex-direction: column;
+      gap: 24px;
+      padding-block: 0px;
+    }
+
+    .f-c {
+      display: flex;
+      justify-content: space-around;
+      width: inherit;
+      width: 100%;
+
+      @media (width <=948px) {
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 24px;
+
+        &:first-child {
+          width: 200%;
+        }
+      }
+
+      @media (width <=416px) {
+        &:first-child {
+          width: 100% !important;
+        }
+      }
+
+      .f-item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        @media (width <=416px) {
+          gap: 3px;
+        }
+
+        & h2 {
+          @include robotoFontBold;
+          font-size: 21px;
+          cursor: pointer;
+          margin-bottom: 14px;
+        }
+
+        & span {
+          @include robotoFontThin;
+          font-size: 16px;
+          line-height: 1.8rem;
+          cursor: pointer;
+        }
+
+        & img {
+          cursor: pointer;
+          width: 144px;
+          height: 43px;
+          border-radius: 4px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .bottom-f {
+    @include robotoFontThin;
+    font-size: 16px;
+    margin-top: 36px;
+    text-align: center;
+
+    @media (width <=416px) {
+      .br::after {
+        content: "\A";
+        white-space: pre;
+      }
+    }
+
+    & span {
+      text-decoration: underline;
+    }
+  }
+}
