@@ -309,26 +309,6 @@ main {
           }
         }
       }
-
-      .grid span:nth-child(1) {
-        & span {
-          transform: rotate(45deg) translateY(5.8px) translateX(7px);
-          width: 100%;
-        }
-      }
-
-      .grid span:nth-child(2) {
-        & span {
-          transform: scaleX(0);
-        }
-      }
-
-      .grid span:nth-child(3) {
-        & span {
-          transform: rotate(-45deg) translateY(-5.8px) translateX(7px);
-          width: 100%;
-        }
-      }
     }
   }
 
