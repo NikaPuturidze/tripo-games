@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
         card1.addEventListener("click", () => {
             window.location.href = "../pages/kipon.html";
         })
-        
+
         card2.addEventListener("click", () => {
             window.location.href = "../pages/robotrix.html";
         })
-        
+
         card3.addEventListener("click", () => {
             window.location.href = "../pages/treasure-box.html";
         })
@@ -49,7 +49,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isInViewport(gameBox4)) gameBox4.classList.add("slideLeft");
 
         if (isInViewport(about)) about.classList.add("scale");
-        if (isInViewport(cat)) cat.classList.add("slideUp");
+
+        if (isInViewport(cat)) {
+            if (window.innerWidth > 1000) {
+                cat.classList.add("slideUp");
+            } else {
+                cat.classList.add("slideRight");
+            }
+        }
+
         if (isInViewport(join)) join.classList.add("slideRight");
         if (isInViewport(vacancy)) vacancy.classList.add("slideRight");
         if (isInViewport(newsletter)) newsletter.classList.add("slideLeft");
@@ -104,31 +112,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const gamesNav = document.querySelector(".games-d")
         const gamesNavArrow = document.querySelector(".games-d-i")
         const gameSelectorNav = document.querySelector(".g-selector-t")
-        gamesNavArrow.style.transform = "rotate(180deg)";
 
         let isGamesOpen = false
 
         gamesNav.addEventListener("click", () => {
             if (isGamesOpen === false) {
                 isGamesOpen = !isGamesOpen
-                gamesNavArrow.style.transform = "rotate(0)";
+                gamesNavArrow.style.transform = "rotate(180deg)";
                 gameSelectorNav.style.display = "flex"
             } else {
                 isGamesOpen = !isGamesOpen
-                gamesNavArrow.style.transform = "rotate(180deg)";
+                gamesNavArrow.style.transform = "rotate(0)";
                 gameSelectorNav.style.display = "none"
             }
         })
     }
 
     function isInViewport(element) {
-        if (!element) return false;
-        var rect = element.getBoundingClientRect();
+        let { top, bottom, left, right } = element.getBoundingClientRect();
         return (
-            rect.top < window.innerHeight &&
-            rect.bottom > 0 &&
-            rect.left < window.innerWidth &&
-            rect.right > 0
+            top < window.innerHeight && bottom > 0 && left < window.innerWidth && right > 0
         );
     }
 

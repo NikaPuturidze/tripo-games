@@ -63,31 +63,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const gamesNav = document.querySelector(".games-d")
         const gamesNavArrow = document.querySelector(".games-d-i")
         const gameSelectorNav = document.querySelector(".g-selector-t")
-        gamesNavArrow.style.transform = "rotate(180deg)";
 
         let isGamesOpen = false
 
         gamesNav.addEventListener("click", () => {
             if (isGamesOpen === false) {
                 isGamesOpen = !isGamesOpen
-                gamesNavArrow.style.transform = "rotate(0)";
+                gamesNavArrow.style.transform = "rotate(180deg)";
                 gameSelectorNav.style.display = "flex"
             } else {
                 isGamesOpen = !isGamesOpen
-                gamesNavArrow.style.transform = "rotate(180deg)";
+                gamesNavArrow.style.transform = "rotate(0)";
                 gameSelectorNav.style.display = "none"
             }
         })
     }
 
     function isInViewport(element) {
-        if (!element) return false;
-        var rect = element.getBoundingClientRect();
+        let { top, bottom, left, right } = element.getBoundingClientRect();
         return (
-            rect.top < window.innerHeight &&
-            rect.bottom > 0 &&
-            rect.left < window.innerWidth &&
-            rect.right > 0
+            top < window.innerHeight && bottom > 0 && left < window.innerWidth && right > 0
         );
     }
 
