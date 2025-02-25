@@ -3,6 +3,266 @@
 @use "./keyframes" as *;
 @use "./global" as *;
 
+.header {
+  position: relative;
+  z-index: 9999999;
+  width: 100%;
+  height: 67px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  @include slide("down");
+  padding-inline: 99px;
+  background-color: $defaultBackgroundColor;
+
+  @media (width <=672px) {
+    padding-inline: 18px;
+  }
+
+  @media (width <=1010px) {
+    .header-right {
+      display: none !important;
+    }
+
+    .group {
+      display: grid !important;
+    }
+  }
+
+  .header-left {
+    display: flex;
+    justify-content: center;
+    height: inherit;
+
+    .company-name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 166px;
+      height: 63px;
+      background-color: $red;
+      border-radius: 0 0 10px 10px;
+
+      @media (width <=672px) {
+        height: 50px !important;
+        width: 140px;
+      }
+
+      & a {
+        @include reklamaFont;
+        text-decoration: none;
+        font-size: 26px;
+        height: 32px;
+        color: $white;
+        line-height: normal;
+        position: relative;
+        top: -3px;
+
+        @media (width <=672px) {
+          font-size: 22px !important;
+          position: static !important;
+        }
+      }
+    }
+  }
+
+  .header-right {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 6px 3px 12px 3px rgba($red, 0.08);
+    overflow: hidden;
+
+    .header-items {
+      display: flex;
+      height: inherit;
+      cursor: pointer;
+      background-color: $white;
+
+      .games {
+        transition: all 0.3s ease;
+        border: 0 !important;
+        width: 106px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $red;
+
+        & span {
+          color: $white;
+        }
+
+        &:hover {
+          background-color: $red;
+
+          & span {
+            color: $white;
+          }
+
+          .g-selector {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        .g-selector {
+          position: absolute;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          flex-direction: column;
+          height: 120px;
+          top: 60px;
+          border-radius: 0 0 6px 6px;
+          overflow: hidden;
+
+          .to {
+            height: 40px;
+            width: 106px;
+            background-color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+
+            &:nth-child(2) {
+              background-color: $red;
+              color: $white;
+            }
+
+            &:hover {
+              background-color: $red;
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .to-home {
+        transition: all 0.3s ease;
+        border-radius: 0 0 0 10px;
+        width: 106px;
+        height: inherit;
+
+        &:hover {
+          background-color: $red;
+          color: $white;
+        }
+      }
+
+      .to-career {
+        transition: all 0.3s ease;
+        width: 116px;
+        height: inherit;
+
+        &:hover {
+          background-color: $red;
+          color: $white;
+        }
+      }
+
+      .to-about {
+        transition: all 0.3s ease;
+        width: 104px;
+        height: inherit;
+
+        &:hover {
+          background-color: $red;
+          color: $white;
+        }
+      }
+
+      .to-contact {
+        transition: all 0.3s ease;
+        width: 117px;
+        height: inherit;
+        border-radius: 0 0 10px 0;
+
+        &:hover {
+          background-color: $red;
+          color: $white;
+        }
+      }
+
+      & a,
+      span {
+        @include robotoFontThin;
+        list-style: none;
+        height: inherit;
+        color: $darkBlue;
+        font-weight: 400;
+
+        & li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .current {
+          border-radius: 0 0 0 10px;
+        }
+
+        .last {
+          border-radius: 0 0 10px 0;
+        }
+      }
+    }
+  }
+
+  .group {
+    display: none;
+    place-items: center;
+    height: 50px;
+    width: 50px;
+    min-width: 50px;
+    border: none;
+    background-color: $red;
+    cursor: pointer;
+    border-radius: 0 0 10px 10px;
+
+    .grid {
+      display: grid;
+      place-items: center;
+      gap: 6px;
+
+      & span {
+        display: flex;
+        height: 3px;
+        width: 30px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+
+        & span {
+          background-color: $white;
+        }
+      }
+
+      & span:nth-child(1) {
+        justify-content: flex-start;
+
+        & span {
+          width: 50%;
+        }
+      }
+
+      & span:nth-child(2) {
+        & span {
+          width: 100%;
+        }
+      }
+
+      & span:nth-child(3) {
+        justify-content: flex-end;
+
+        & span {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
 main {
   background-color: $defaultBackgroundColor;
 
@@ -63,254 +323,6 @@ main {
             &:nth-child(2) {
               color: $red;
             }
-          }
-        }
-      }
-    }
-  }
-  
-  .header {
-    position: relative;
-    z-index: 9999999;
-    width: 100%;
-    height: 67px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    @include slide("down");
-    padding-inline: 99px;
-
-    @media (width <=672px) {
-      padding-inline: 18px;
-    }
-
-    @media (width <=1010px) {
-      .header-right {
-        display: none !important;
-      }
-
-      .group {
-        display: grid !important;
-      }
-    }
-
-    .header-left {
-      display: flex;
-      justify-content: center;
-      height: inherit;
-
-      .company-name {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 166px;
-        height: 63px;
-        background-color: $red;
-        border-radius: 0 0 10px 10px;
-
-        @media (width <=672px) {
-          height: 50px !important;
-          width: 140px;
-        }
-
-        & a {
-          @include reklamaFont;
-          text-decoration: none;
-          font-size: 26px;
-          height: 32px;
-          color: $white;
-          line-height: normal;
-          position: relative;
-          top: -3px;
-
-          @media (width <=672px) {
-            font-size: 22px !important;
-            position: static !important;
-          }
-        }
-      }
-    }
-
-    .header-right {
-      display: flex;
-      justify-content: center;
-      height: 60px;
-      border-radius: 0 0 10px 10px;
-      box-shadow: 6px 3px 12px 3px rgba($red, 0.08);
-      overflow: hidden;
-
-      .header-items {
-        display: flex;
-        height: inherit;
-        cursor: pointer;
-        background-color: $white;
-
-        .games {
-          transition: all 0.3s ease-in-out;
-          border: 0 !important;
-          width: 106px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          &:hover {
-            background-color: $red;
-
-            & span {
-              color: $white;
-            }
-
-            .g-selector {
-              display: flex;
-            }
-          }
-
-          .g-selector {
-            position: absolute;
-            display: none;
-            flex-direction: column;
-            height: 120px;
-            top: 60px;
-            border-radius: 0 0 6px 6px;
-            overflow: hidden;
-
-            .to {
-              height: 40px;
-              width: 106px;
-              background-color: $white;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              transition: all 0.3s ease-in-out;
-
-              &:nth-child(2) {
-                background-color: $red;
-                color: $white;
-              }
-
-              &:hover {
-                background-color: $red;
-                color: $white;
-              }
-            }
-          }
-        }
-
-        .to-home {
-          background-color: $red;
-          border-radius: 0 0 0 10px;
-          color: $white;
-          width: 106px;
-          height: inherit;
-          cursor: pointer;
-        }
-
-        .to-career {
-          transition: all 0.3s ease-in-out;
-          width: 116px;
-          height: inherit;
-
-          &:hover {
-            background-color: $red;
-            color: $white;
-          }
-        }
-
-        .to-about {
-          transition: all 0.3s ease-in-out;
-          width: 104px;
-          height: inherit;
-
-          &:hover {
-            background-color: $red;
-            color: $white;
-          }
-        }
-
-        .to-contact {
-          transition: all 0.3s ease-in-out;
-          width: 117px;
-          height: inherit;
-          border-radius: 0 0 10px 0;
-
-          &:hover {
-            background-color: $red;
-            color: $white;
-          }
-        }
-
-        & a,
-        span {
-          @include robotoFontThin;
-          list-style: none;
-          height: inherit;
-          color: $darkBlue;
-          font-weight: 400;
-
-          & li {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-
-          .current {
-            border-radius: 0 0 0 10px;
-          }
-
-          .last {
-            border-radius: 0 0 10px 0;
-          }
-        }
-      }
-    }
-
-    .group {
-      display: none;
-      place-items: center;
-      height: 50px;
-      width: 50px;
-      min-width: 50px;
-      border: none;
-      background-color: $red;
-      cursor: pointer;
-      border-radius: 0 0 10px 10px;
-
-      .grid {
-        display: grid;
-        place-items: center;
-        gap: 6px;
-
-        & span {
-          display: flex;
-          height: 3px;
-          width: 30px;
-          border-radius: 4px;
-          transition: all 0.3s ease;
-
-          & span {
-            background-color: $white;
-          }
-        }
-
-        & span:nth-child(1) {
-          justify-content: flex-start;
-
-          & span {
-            width: 50%;
-          }
-        }
-
-        & span:nth-child(2) {
-          & span {
-            width: 100%;
-          }
-        }
-
-        & span:nth-child(3) {
-          justify-content: flex-end;
-
-          & span {
-            width: 50%;
           }
         }
       }
@@ -495,7 +507,7 @@ main {
         }
 
         & img {
-          transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease;
           width: 100%;
 
           &:hover {
