@@ -315,12 +315,13 @@ body {
     }
 
     .section-about {
+      @include slide("right");
       width: 100%;
       padding: 84px;
       display: flex;
       flex-direction: column;
       gap: 28px;
-      @include slide("right");
+      color: $darkBlue;
 
       @media (width <=650px) {
         text-align: center;
@@ -523,6 +524,7 @@ body {
         margin-block-start: 12px;
         transition: all 0.3s ease;
         cursor: pointer;
+        color: $darkBlue;
 
         &:hover {
           background-color: $white;
@@ -538,6 +540,7 @@ body {
     gap: 40px;
     padding-inline: 190px;
     overflow-x: hidden;
+    color: $darkBlue;
 
     @media (width <=1440px) {
       padding-inline: 48px;

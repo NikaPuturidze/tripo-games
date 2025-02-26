@@ -757,6 +757,7 @@ main {
           justify-content: center;
           width: inherit;
           height: inherit;
+          color: $darkBlue;
 
           @media (width <=350px) {
             justify-content: center !important;
@@ -880,10 +881,10 @@ main {
 
 .section-join {
   width: 100%;
-  margin-top: 100px;
+  margin-block-start: 100px;
 
   @media (width <=948px) {
-    margin-top: 40px;
+    margin-block-start: 40px;
   }
 
   .dragon-wrapper {
@@ -896,11 +897,11 @@ main {
     width: inherit;
     height: 750px;
     padding-inline: 64px;
-    padding-top: 64px;
+    padding-block-start: 64px;
 
     @media (width <=1000px) {
       padding-inline: 24px;
-      padding-top: 48px;
+      padding-block-start: 48px;
     }
 
     .our-team {
@@ -1037,6 +1038,7 @@ main {
         gap: 26px;
         position: relative;
         top: -212px;
+        color: $darkBlue;
 
         @media (width <=500px) {
           padding: 22px 18px;
@@ -1267,7 +1269,7 @@ main {
 
             @media (width <=380px) {
               width: 100%;
-              margin-top: 12px;
+              margin-block-start: 12px;
             }
 
             &:hover {
@@ -1289,6 +1291,7 @@ main {
   gap: 40px;
   padding-inline: 190px;
   overflow-x: hidden;
+  color: $darkBlue;
 
   @media (width <=1440px) {
     padding-inline: 48px;
@@ -1322,7 +1325,7 @@ main {
   & h3 {
     @include robotoFontThin;
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-block-end: 20px;
 
     @media (width <=416px) {
       text-align: center;
