@@ -85,6 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let isInHeader = false
 
+        const toMarker = document.getElementById("to-marker");
+        toMarker.addEventListener("click", () => {
+            burgerNav.style.display = "none"
+        })
+
         burger.addEventListener("click", () => {
             if (isInHeader === false) {
                 isInHeader = !isInHeader

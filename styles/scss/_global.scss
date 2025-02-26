@@ -21,6 +21,10 @@ a:visited {
   color: transparent;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   color: $black;
 }
