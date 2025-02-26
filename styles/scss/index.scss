@@ -334,7 +334,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 36px;
-    margin-top: 90px;
+    margin-block-start: 90px;
     max-width: 770px;
     @include slide("right");
 
@@ -345,7 +345,7 @@ main {
         @include suezFont;
         font-size: 80px;
         line-height: 1.2em;
-        margin-bottom: 8px;
+        margin-block-end: 8px;
       }
 
       & span {
@@ -538,7 +538,7 @@ main {
   gap: 20px;
 
   @media (width <=968px) {
-    margin-top: 40px;
+    margin-block-start: 40px;
     margin-inline: 30px;
   }
 
@@ -665,7 +665,7 @@ main {
 }
 
 .section-games {
-  margin-top: 160px;
+  margin-block-start: 160px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -722,7 +722,7 @@ main {
     align-items: center;
     height: 1180px;
     width: 100%;
-    margin-top: 80px;
+    margin-block-start: 80px;
 
     .games-wrapper {
       display: flex;
@@ -734,7 +734,7 @@ main {
       z-index: 2;
 
       @media (width <=990px) {
-        margin-top: 50px;
+        margin-block-start: 50px;
         gap: 20px;
         justify-content: center;
       }
@@ -978,7 +978,7 @@ main {
       }
 
       & img {
-        margin-top: auto;
+        margin-block-start: auto;
         aspect-ratio: 244/207;
 
         @media (width <=1156px) {
@@ -1045,7 +1045,7 @@ main {
 
           & p {
             font-size: 17px !important;
-            margin-bottom: 4px !important;
+            margin-block-end: 4px !important;
           }
         }
 
@@ -1057,7 +1057,7 @@ main {
         & p {
           @include robotoFontThin;
           font-size: 18px;
-          margin-bottom: 8px;
+          margin-block-end: 8px;
         }
 
         .names {
@@ -1385,7 +1385,7 @@ main {
           @include robotoFontBold;
           font-size: 21px;
           cursor: pointer;
-          margin-bottom: 14px;
+          margin-block-end: 14px;
         }
 
         & span {
@@ -1409,7 +1409,7 @@ main {
   .bottom-f {
     @include robotoFontThin;
     font-size: 16px;
-    margin-top: 36px;
+    margin-block-start: 36px;
     text-align: center;
 
     @media (width <=416px) {

@@ -574,7 +574,7 @@ body {
     & h3 {
       @include robotoFontThin;
       font-size: 24px;
-      margin-bottom: 20px;
+      margin-block-end: 20px;
 
       @media (width <=416px) {
         text-align: center;
@@ -634,7 +634,7 @@ body {
             @include robotoFontBold;
             font-size: 21px;
             cursor: pointer;
-            margin-bottom: 14px;
+            margin-block-end: 14px;
           }
 
           & span {
@@ -658,7 +658,7 @@ body {
     .bottom-f {
       @include robotoFontThin;
       font-size: 16px;
-      margin-top: 36px;
+      margin-block-start: 36px;
       text-align: center;
 
       @media (width <=416px) {
