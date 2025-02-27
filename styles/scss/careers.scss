@@ -260,6 +260,7 @@ body {
       height: 100vh;
       background-color: $defaultBackgroundColor;
       z-index: 99999;
+      top: 67px;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -399,7 +400,6 @@ body {
         }
 
         @media (width <=672px) {
-          grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
           padding-inline: 18px;
           padding-block: 36px;
         }
