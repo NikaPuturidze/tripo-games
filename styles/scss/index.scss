@@ -94,7 +94,7 @@ main {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      @include slide("down");
+      @include header-down;
 
       @media (width <=1010px) {
         .header-right {
@@ -335,7 +335,7 @@ main {
     gap: 36px;
     margin-block-start: 90px;
     max-width: 770px;
-    @include slide("right");
+    @include fadeShort;
 
     .ad-text {
       color: $darkBlue;
@@ -533,47 +533,52 @@ main {
   flex-direction: column;
   align-items: center;
   color: $darkBlue;
-  margin-inline: 100px;
-  gap: 20px;
 
-  @media (width <=968px) {
-    margin-block-start: 40px;
-    margin-inline: 30px;
-  }
-
-  & h6 {
-    @include robotoFontBold;
-    text-align: center;
-    font-size: 21px;
-
+  .about-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: 100px;
+    gap: 20px;
     @media (width <=968px) {
-      font-size: 19px;
+      margin-block-start: 40px;
+      margin-inline: 30px;
+    }
+  
+    & h6 {
+      @include robotoFontBold;
+      text-align: center;
+      font-size: 21px;
+  
+      @media (width <=968px) {
+        font-size: 19px;
+      }
+    }
+  
+    & h2 {
+      @include suezFont;
+      text-align: center;
+      font-size: 50px;
+  
+      @media (width <=968px) {
+        font-size: 36px;
+      }
+    }
+  
+    & p {
+      @include robotoFontThin;
+      max-width: 700px;
+      line-height: 1.6em;
+      text-align: center;
+      font-size: 18px;
+  
+      @media (width <=968px) {
+        font-size: 17px;
+      }
     }
   }
 
-  & h2 {
-    @include suezFont;
-    text-align: center;
-    font-size: 50px;
-
-    @media (width <=968px) {
-      font-size: 36px;
-    }
-  }
-
-  & p {
-    @include robotoFontThin;
-    max-width: 700px;
-    line-height: 1.6em;
-    text-align: center;
-    font-size: 18px;
-
-    @media (width <=968px) {
-      font-size: 17px;
-    }
-  }
-
-  & button {
+  .more-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -627,7 +632,7 @@ main {
         width: 100%;
       }
 
-      & img:last-child {
+      .lovely-creature {
         position: absolute;
         bottom: -60px;
         left: -100px;
@@ -679,6 +684,7 @@ main {
     flex-direction: column;
     color: $darkBlue;
     gap: 20px;
+    position: relative;
 
     & h2 {
       @include suezFont;

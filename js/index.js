@@ -32,33 +32,52 @@ document.addEventListener("DOMContentLoaded", () => {
         const gameBox3 = document.getElementById("game-box3");
         const gameBox4 = document.getElementById("game-box4");
 
+        const aboutDesc = document.querySelector(".about-desc");
         const about = document.querySelector(".about-img");
+        const lovely = document.querySelector(".lovely-creature");
+        const btnMore = document.querySelector(".more-btn");
+        const ourGames = document.querySelector(".our-games");
+        const wrap = document.querySelector(".wrap");
+
         const cat = document.querySelector(".another-cat");
         const join = document.querySelector(".our-team");
         const vacancy = document.querySelector(".vacancy");
         const newsletter = document.querySelector(".newsletter");
         ``
-        if (isInViewport(card1)) card1.classList.add("scale");
-        if (isInViewport(card2)) card2.classList.add("scale");
-        if (isInViewport(card3)) card3.classList.add("scale");
-        if (isInViewport(card4)) card4.classList.add("scale");
+        if (isInViewport(card1)) card1.classList.add("fadeShort");
+        if (isInViewport(card2)) card2.classList.add("fadeShort");
+        if (isInViewport(card3)) card3.classList.add("fadeShort");
+        if (isInViewport(card4)) card4.classList.add("fadeShort");
 
         if (isInViewport(gameBox1)) gameBox1.classList.add("slideRight");
         if (isInViewport(gameBox2)) gameBox2.classList.add("slideLeft");
         if (isInViewport(gameBox3)) gameBox3.classList.add("slideRight");
         if (isInViewport(gameBox4)) gameBox4.classList.add("slideLeft");
 
-        if (isInViewport(about)) about.classList.add("scale");
+        if (isInViewport(aboutDesc)) aboutDesc.classList.add("fadeMid");
+        if (isInViewport(about)) about.classList.add("fadeLong");
+        if (isInViewport(lovely)) lovely.classList.add("fade");
+        if (isInViewport(btnMore)) btnMore.classList.add("fadeMid");
+        if (isInViewport(ourGames)) ourGames.classList.add("fadeMid");
+        if (isInViewport(wrap)) {
+            let height = window.innerHeight - wrap.getBoundingClientRect().top
+            const range = (height, max) => {
+                if (height <= 0) return 0;
+                if (height >= max) return 1;
+                return height / max;
+            };
+            wrap.style.opacity = range(height, 1000)
+        };
 
         if (isInViewport(cat)) {
             if (window.innerWidth > 1000) {
-                cat.classList.add("slideUp");
+                cat.classList.add("fadeLong");
             } else {
                 cat.classList.add("slideRight");
             }
         }
 
-        if (isInViewport(join)) join.classList.add("slideRight");
+        if (isInViewport(join)) join.classList.add("fade");
         if (isInViewport(vacancy)) vacancy.classList.add("slideRight");
         if (isInViewport(newsletter)) newsletter.classList.add("slideLeft");
 

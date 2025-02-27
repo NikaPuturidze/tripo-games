@@ -1,136 +1,232 @@
 @mixin slide($direction) {
 
-    $from: 25%;
+  $from: 15%;
+  $to: 0;
+
+  @if $direction =="down" {
+    $from: -15%;
     $to: 0;
+  }
 
-    @if $direction =="down" {
-        $from: -25%;
-        $to: 0;
+  @else if $direction =="right" {
+    $from: -15%;
+    $to: 0;
+  }
+
+
+  $animation-name: fade-#{$direction};
+
+  @keyframes #{$animation-name} {
+    from {
+      @if $direction =="down" {
+        transform: translateY($from);
+      }
+
+      @else if $direction =="up" {
+        transform: translateY($from);
+      }
+
+      @else if $direction =="left" {
+        transform: translateX($from);
+      }
+
+      @else if $direction =="right" {
+        transform: translateX($from);
+      }
+
+      opacity: 0;
     }
 
-    @else if $direction =="right" {
-        $from: -25%;
-        $to: 0;
+    to {
+      @if $direction =="down" {
+        transform: translateY($to);
+      }
+
+      @else if $direction =="up" {
+        transform: translateY($to);
+      }
+
+      @else if $direction =="left" {
+        transform: translateX($to);
+      }
+
+      @else if $direction =="right" {
+        transform: translateX($to);
+      }
+
+      opacity: 1;
+    }
+  }
+
+  animation: #{$animation-name} 1s ease forwards;
+}
+
+@mixin header-down {
+  @keyframes header-down {
+    from {
+      transform: translateY(-100%);
     }
 
-
-    $animation-name: fade-#{$direction};
-
-    @keyframes #{$animation-name} {
-        from {
-            @if $direction =="down" {
-                transform: translateY($from);
-            }
-
-            @else if $direction =="up" {
-                transform: translateY($from);
-            }
-
-            @else if $direction =="left" {
-                transform: translateX($from);
-            }
-
-            @else if $direction =="right" {
-                transform: translateX($from);
-            }
-
-            opacity: 0;
-        }
-
-        to {
-            @if $direction =="down" {
-                transform: translateY($to);
-            }
-
-            @else if $direction =="up" {
-                transform: translateY($to);
-            }
-
-            @else if $direction =="left" {
-                transform: translateX($to);
-            }
-
-            @else if $direction =="right" {
-                transform: translateX($to);
-            }
-
-            opacity: 1;
-        }
+    to {
+      transform: translateY(0);
     }
+  }
 
-    animation: #{$animation-name} 1s ease-out forwards;
+  animation: header-down 1.2s ease-out forwards;
 }
 
 @mixin down-fast {
-    @keyframes down-fast {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
+  @keyframes down-fast {
+    from {
+      opacity: 0;
     }
 
-    animation: down-fast 0.5s ease-out forwards;
+    to {
+      opacity: 1;
+    }
+  }
+
+  animation: down-fast 0.5s ease-out forwards;
 }
 
 @mixin fade-scale {
-    @keyframes fade-scale {
-        from {
-            opacity: 0.8;
-            transform: scale(1) translateY(40px);
-        }
-
-        to {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
+  @keyframes fade-scale {
+    from {
+      opacity: 0.8;
+      transform: scale(0.98) translateY(40px);
     }
 
-    animation: fade-scale 1s ease-out forwards;
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  animation: fade-scale 1s ease-out forwards;
 }
 
+@mixin fadeShort {
+  @keyframes fadeShort {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  animation: fadeShort 0.6s ease-out forwards;
+}
+
+@mixin fadeMid {
+  @keyframes fadeMid {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  animation: fadeMid 1s ease-out forwards;
+}
+
+
+@mixin fadeLong {
+  @keyframes fadeLong {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  animation: fadeLong 1.4s ease-out forwards;
+}
+
+@mixin fade {
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  animation: fade 1s ease-out forwards;
+}
+
+
+
 .slideLeft {
-    @include slide("left");
+  @include slide("left");
 }
 
 .slideRight {
-    @include slide("right");
+  @include slide("right");
 }
 
 .slideUp {
-    @include slide("up");
+  @include slide("up");
 }
 
 .slideDown {
-    @include slide("down");
+  @include slide("down");
 }
 
 .scale {
-    @include fade-scale;
+  @include fade-scale;
 }
 
 .down-fast {
-    @include down-fast;
+  @include down-fast;
 }
 
+.fadeShort {
+  @include fadeShort;
+}
+
+.fadeMid {
+  @include fadeMid;
+}
+
+.fadeLong {
+  @include fadeLong;
+}
+
+.fade {
+  @include fade;
+}
+
+
 .grid-t span:nth-child(1) {
-    & span {
-        transform: rotate(45deg) translateY(5.8px) translateX(7px);
-        width: 100% !important;
-    }
+  & span {
+    transform: rotate(45deg) translateY(5.8px) translateX(7px);
+    width: 100% !important;
+  }
 }
 
 .grid-t span:nth-child(2) {
-    & span {
-        transform: scaleX(0);
-    }
+  & span {
+    transform: scaleX(0);
+  }
 }
 
 .grid-t span:nth-child(3) {
-    & span {
-        transform: rotate(-45deg) translateY(-5.8px) translateX(7px);
-        width: 100% !important;
-    }
+  & span {
+    transform: rotate(-45deg) translateY(-5.8px) translateX(7px);
+    width: 100% !important;
+  }
 }

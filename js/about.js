@@ -10,6 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const sectionApproach = document.querySelector(".section-our-approach")
         const sectionFacilites = document.querySelector(".section-facilities")
 
+        const aboutTripo = document.getElementById("about-tripo");
+        const storyHeader = document.querySelector(".story-header")
+        const founder1 = document.getElementById("founder1")
+        const founder2 = document.getElementById("founder2")
+        const founder3 = document.getElementById("founder3")
+        const founder4 = document.getElementById("founder4")
+        const office = document.getElementById("office-d")
+        const explore = document.getElementById("explore-d")
+
+        if (isInViewport(aboutTripo)) aboutTripo.classList.add("fadeShort");
+        if (isInViewport(storyHeader)) storyHeader.classList.add("slideRight");
+        if (isInViewport(founder1)) founder1.classList.add("fade");
+        if (isInViewport(founder2)) founder2.classList.add("fade");
+        if (isInViewport(founder3)) founder3.classList.add("fade");
+        if (isInViewport(founder4)) founder4.classList.add("fade");
+        if (isInViewport(office)) office.classList.add("slideRight");
+        if (isInViewport(explore)) explore.classList.add("slideLeft");
+
         if (isInViewport(sectionApproach) && sectionApproachInitialScrollY === null) {
             sectionApproachInitialScrollY = sectionApproach.getBoundingClientRect().top + window.scrollY;
         }
