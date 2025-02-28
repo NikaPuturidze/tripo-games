@@ -533,6 +533,7 @@ main {
   flex-direction: column;
   align-items: center;
   color: $darkBlue;
+  padding-inline: 18px;
 
   .about-desc {
     display: flex;
@@ -593,8 +594,8 @@ main {
     cursor: pointer;
 
     @media (width <=968px) {
-      margin-block-start: 10px;
-      margin-block-end: 14px;
+      margin-block-start: 16px;
+      margin-block-end: 30px;
     }
 
     @media (width <=660px) {
@@ -729,6 +730,10 @@ main {
     width: 100%;
     margin-block-start: 80px;
 
+    @media (width <=990px) {
+      margin-block-start: 0;
+    }
+
     .games-wrapper {
       display: flex;
       flex-direction: column;
@@ -739,7 +744,7 @@ main {
       z-index: 2;
 
       @media (width <=990px) {
-        margin-block-start: 50px;
+        margin-block-start: 90px;
         gap: 20px;
         justify-content: center;
       }
@@ -793,7 +798,7 @@ main {
 
             @media (width <=990px) {
               width: 300px !important;
-              height: 300px !important;
+              height: 310px !important;
               padding: 20px;
             }
 
@@ -851,17 +856,12 @@ main {
               display: flex;
               justify-content: space-between;
               width: 100%;
+              gap: 2px;
 
               & img {
                 cursor: pointer;
-              }
-
-              @media (width <=990px) {
-                justify-content: center;
-
-                & img:last-child {
-                  display: none;
-                }
+                width: 120px;
+                height: 40px;
               }
             }
           }
@@ -942,7 +942,7 @@ main {
         line-height: 3.8rem;
 
         @media (width <=1000px) {
-          font-size: 44px;
+          font-size: 42px;
           line-height: 3.2rem;
         }
       }
