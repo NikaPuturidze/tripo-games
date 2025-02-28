@@ -886,12 +886,19 @@ main {
           cursor: pointer;
         }
 
+        & a {
+          @include robotoFontThin;
+          font-size: 16px;
+          line-height: 1.8rem;
+          cursor: pointer;
+        }
+
         & img {
           cursor: pointer;
           width: 144px;
           height: 43px;
           border-radius: 4px;
-          object-fit: cover;
+          object-fit: cover
         }
       }
     }
