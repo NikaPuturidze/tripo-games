@@ -259,11 +259,20 @@ body {
       width: 100%;
       height: 100vh;
       background-color: $defaultBackgroundColor;
-      z-index: 99999;
+      z-index: 999999;
       top: 67px;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       text-align: center;
+      padding-block-start: 300px;
+  
+      @media (width <=768px) {
+        padding-block-start: 200px;
+      }
+  
+      @media (width <=480px) {
+        padding-block-start: 100px;
+      }
 
       & ul {
         display: flex;
@@ -541,15 +550,15 @@ body {
     padding-inline: 190px;
     overflow-x: hidden;
     color: $darkBlue;
-  
+
     @media (width <=1440px) {
       padding-inline: 48px;
     }
-  
+
     @media (width <=948px) {
       padding-inline: 24px;
     }
-  
+
     .company-name-b {
       display: flex;
       align-items: center;
@@ -558,7 +567,7 @@ body {
       height: 63px;
       background-color: $red;
       border-radius: 0 0 10px 10px;
-  
+
       & a {
         @include reklamaFont;
         text-decoration: none;
@@ -570,87 +579,87 @@ body {
         top: -3px;
       }
     }
-  
+
     & h3 {
       @include robotoFontThin;
       font-size: 24px;
       margin-block-end: 20px;
-  
+
       @media (width <=416px) {
         text-align: center;
       }
     }
-  
+
     .hl {
       height: 1px;
       background-color: $black;
       width: 100%;
     }
-  
+
     .footer-d {
       display: flex;
       justify-content: space-around;
       width: 100%;
       padding-block: 36px;
-  
+
       @media (width <=416px) {
         flex-direction: column;
         gap: 24px;
         padding-block: 0px;
       }
-  
+
       .f-c {
         display: flex;
         justify-content: space-around;
         width: inherit;
         width: 100%;
-  
+
         @media (width <=948px) {
           flex-direction: column;
           justify-content: space-between;
           gap: 24px;
-  
+
           &:first-child {
             width: 200%;
           }
         }
-  
+
         @media (width <=416px) {
           &:first-child {
             width: 100% !important;
           }
         }
-  
+
         .f-item {
           display: flex;
           flex-direction: column;
           gap: 6px;
-  
+
           @media (width <=416px) {
             gap: 3px;
           }
-  
+
           & h2 {
             @include robotoFontBold;
             font-size: 21px;
             cursor: pointer;
             margin-block-end: 14px;
           }
-  
+
           & span {
             @include robotoFontThin;
             font-size: 16px;
             line-height: 1.8rem;
             cursor: pointer;
           }
-  
+
           & a {
             @include robotoFontThin;
             font-size: 16px;
             line-height: 1.8rem;
             cursor: pointer;
           }
-  
+
           & img {
             cursor: pointer;
             width: 144px;
@@ -661,20 +670,20 @@ body {
         }
       }
     }
-  
+
     .bottom-f {
       @include robotoFontThin;
       font-size: 16px;
       margin-block-start: 36px;
       text-align: center;
-  
+
       @media (width <=416px) {
         .br::after {
           content: "\A";
           white-space: pre;
         }
       }
-  
+
       & span {
         text-decoration: underline;
       }

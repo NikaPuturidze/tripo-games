@@ -271,11 +271,20 @@ main {
     width: 100%;
     height: 100vh;
     background-color: $defaultBackgroundColor;
-    z-index: 99999;
+    z-index: 999999;
     top: 67px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
+    padding-block-start: 300px;
+
+    @media (width <=768px) {
+      padding-block-start: 200px;
+    }
+
+    @media (width <=480px) {
+      padding-block-start: 100px;
+    }
 
     & ul {
       display: flex;

@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (window.innerWidth >= 1010) {
                 isInHeader = false
                 burgerNav.style.display = "none"
+                grid.classList.remove("grid-t");
             }
         })
 

@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const toMarker = document.getElementById("to-marker");
         toMarker.addEventListener("click", () => {
             burgerNav.style.display = "none"
+                grid.classList.remove("grid-t");
         })
 
         let isInHeader = false

@@ -43,11 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const join = document.querySelector(".our-team");
         const vacancy = document.querySelector(".vacancy");
         const newsletter = document.querySelector(".newsletter");
-        ``
-        if (isInViewport(card1)) card1.classList.add("fadeShort");
-        if (isInViewport(card2)) card2.classList.add("fadeShort");
-        if (isInViewport(card3)) card3.classList.add("fadeShort");
-        if (isInViewport(card4)) card4.classList.add("fadeShort");
 
         if (isInViewport(gameBox1)) gameBox1.classList.add("slideRight");
         if (isInViewport(gameBox2)) gameBox2.classList.add("slideLeft");
@@ -130,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (window.innerWidth >= 1010) {
                 isInHeader = false
                 burgerNav.style.display = "none"
+                grid.classList.remove("grid-t");
             }
         })
 
