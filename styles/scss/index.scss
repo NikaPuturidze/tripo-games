@@ -93,8 +93,9 @@ main {
 
     @media (width <=672px) {
       padding-inline: 18px;
+      height: 720px;
     }
-
+    
     .header {
       position: relative;
       z-index: 9999999;

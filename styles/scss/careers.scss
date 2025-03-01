@@ -455,26 +455,29 @@ body {
             }
           }
 
-          & button {
-            @include robotoFontThin;
-            border-radius: 8px;
-            color: $white;
-            background-color: $darkBlue;
-            font-size: 18px;
-            padding: 12px 12px;
-            margin-block-start: 10px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+          & a {
             max-width: 160px;
-
-            @media (width <=400px) {
-              max-width: 100%;
-            }
-
-            &:hover {
-              background-color: $white;
-              color: $darkBlue;
+            & button {
+              @include robotoFontThin;
+              border-radius: 8px;
+              color: $white;
+              background-color: $darkBlue;
+              font-size: 18px;
+              padding: 12px 12px;
+              margin-block-start: 10px;
+              transition: all 0.3s ease;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+  
+              @media (width <=400px) {
+                max-width: 100%;
+              }
+  
+              &:hover {
+                background-color: $white;
+                color: $darkBlue;
+              }
             }
           }
         }
