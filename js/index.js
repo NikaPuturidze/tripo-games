@@ -15,17 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const card3 = document.getElementById("card3");
         const card4 = document.getElementById("card4");
 
-        card1.addEventListener("click", () => {
-            window.location.href = "../pages/kipon.html";
-        })
 
-        card2.addEventListener("click", () => {
-            window.location.href = "../pages/robotrix.html";
-        })
-
-        card3.addEventListener("click", () => {
-            window.location.href = "../pages/treasure-box.html";
-        })
 
         const gameBox1 = document.getElementById("game-box1");
         const gameBox2 = document.getElementById("game-box2");
@@ -102,6 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const toMarker = document.getElementById("to-marker");
         toMarker.addEventListener("click", () => {
             burgerNav.style.display = "none"
+            main.style.overflow = "visible"
+            grid.classList.remove("grid-t");
         })
 
         burger.addEventListener("click", () => {
@@ -117,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 main.style.overflow = "visible"
                 grid.classList.remove("grid-t");
                 burgerNav.style.display = "none"
-                this.classList.remove("burger-transform")
             }
         })
 

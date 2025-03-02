@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
         main.style.overflow = "visible";
         grid.classList.remove("grid-t");
         burgerNav.style.display = "none";
-        this.classList.remove("burger-transform");
       }
     });
 
