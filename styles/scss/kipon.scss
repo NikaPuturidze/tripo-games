@@ -768,13 +768,16 @@ main {
         gap: 16px;
         display: flex;
 
-        @media (width <=948px) {
+        @media (width <=496px) {
           flex-direction: column;
+          gap: 0 !important;
         }
 
         & img {
           cursor: pointer;
           border-radius: 4px;
+          height: 46px;
+          width: 152px;
         }
       }
     }
