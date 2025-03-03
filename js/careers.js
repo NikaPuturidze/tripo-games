@@ -21,6 +21,32 @@ document.addEventListener("DOMContentLoaded", () => {
       }px`;
     }
 
+    const sendCV = document.getElementById("send-cv")
+    const toggleCV = document.getElementById("toggleCV")
+    const vacancy = document.querySelector(".vacancy")
+
+    let isInCV = false
+    sendCV.style.position = "fixed"
+    sendCV.style.display = "none"
+    sendCV.style.zIndex = "999999"
+    sendCV.style.top = "0"
+
+    sendCV.addEventListener("click", (event) => {
+      sendCV.style.display = "none"
+    })
+
+    vacancy.addEventListener("click", (event) => {
+      event.stopPropagation()
+    })
+
+    toggleCV.addEventListener("click", () => {
+      if (!isInCV) {
+        sendCV.style.display = "flex"
+      } else {
+        sendCV.style.display = "none"
+      }
+    })
+
     const burger = document.querySelector(".group");
     const grid = document.querySelector(".grid");
     const burgerNav = document.querySelector(".burger-nav");
