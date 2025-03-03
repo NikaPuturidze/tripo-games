@@ -1145,6 +1145,14 @@ main {
             border: 1px solid $black;
             padding: 12px 16px;
             font-size: 16px;
+
+            &:valid {
+              border-color: green;
+            }
+
+            &:user-invalid {
+              border-color: $red;
+            }
           }
         }
 
@@ -1230,6 +1238,10 @@ main {
             background-color: $red;
             padding-inline: 16px;
             color: $white;
+
+            &:valid {
+              border-color: green;
+            }
           }
         }
 

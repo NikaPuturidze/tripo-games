@@ -75,6 +75,152 @@ main {
     }
   }
 
+  #send-cv {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($darkBlue, 0.7);
+    padding-inline: 18px;
+
+    .vacancy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 20px;
+      padding: 26px 24px;
+      max-width: 438px;
+      background-color: $white;
+      gap: 26px;
+      position: relative;
+      z-index: 99999999;
+      color: $darkBlue;
+
+      @media (width <=500px) {
+        padding: 22px 18px;
+
+        & p {
+          font-size: 17px !important;
+          margin-block-end: 4px !important;
+        }
+      }
+
+      & h5 {
+        @include robotoFontBold;
+        font-size: 34px;
+      }
+
+      & p {
+        @include robotoFontThin;
+        font-size: 18px;
+        margin-block-end: 8px;
+      }
+
+      .names {
+        display: flex;
+        gap: 12px;
+        width: 100%;
+        justify-content: space-between;
+
+        @media (width <=500px) {
+          flex-direction: column;
+
+          .firstname {
+            width: 100% !important;
+          }
+
+          .lastname {
+            width: 100% !important;
+          }
+        }
+
+        .firstname {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          width: 48%;
+
+          & label {
+            @include robotoFontThin;
+          }
+
+          & input {
+            border-radius: 8px;
+            border: 1px solid $black;
+            padding: 12px 16px;
+            font-size: 16px;
+          }
+        }
+
+        .lastname {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          width: 48%;
+
+          & label {
+            @include robotoFontThin;
+          }
+
+          & input {
+            border-radius: 8px;
+            border: 1px solid $black;
+            padding: 12px 16px;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .email-v {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        & label {
+          @include robotoFontThin;
+        }
+
+        & input {
+          border-radius: 8px;
+          border: 1px solid $black;
+          padding: 12px 16px;
+          font-size: 16px;
+        }
+      }
+
+      .upload-v {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        & label {
+          @include robotoFontThin;
+        }
+
+        & input {
+          width: 100%;
+        }
+      }
+
+      & button {
+        @include robotoFontThin;
+        width: 100%;
+        height: 44px;
+        border: none;
+        font-size: 18px;
+        background-color: $darkBlue;
+        color: $white;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: $red;
+        }
+      }
+    }
+
+  }
+
   .section-job-opening {
     height: 875px;
     width: 100%;
@@ -105,7 +251,7 @@ main {
 
     .header {
       position: relative;
-      z-index: 9999999;
+      z-index: 99999;
       width: 100%;
       height: 67px;
       display: flex;

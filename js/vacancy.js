@@ -4,6 +4,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const grid = document.querySelector(".grid");
     const burgerNav = document.querySelector(".burger-nav");
     const main = document.querySelector("body");
+    const sendCV = document.getElementById("send-cv")
+    const toggleCV = document.getElementById("toggleCV")
+    const vacancy = document.querySelector(".vacancy")
+
+    let isInCV = false
+    sendCV.style.position = "fixed"
+    sendCV.style.display = "none"
+    sendCV.style.zIndex = "999999"
+
+    sendCV.addEventListener("click", (event) => {
+      sendCV.style.display = "none"
+    })
+
+    vacancy.addEventListener("click", (event) => {
+      event.stopPropagation()
+    })
+
+    toggleCV.addEventListener("click", () => {
+      if (!isInCV) {
+        sendCV.style.display = "flex"
+      } else {
+        sendCV.style.display = "none"
+      }
+    })
 
     const toMarker = document.getElementById("to-marker");
     toMarker.addEventListener("click", () => {
@@ -53,16 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
         gameSelectorNav.style.display = "none";
       }
     });
-  }
-
-  function isInViewport(element) {
-    let { top, bottom, left, right } = element.getBoundingClientRect();
-    return (
-      top < window.innerHeight &&
-      bottom > 0 &&
-      left < window.innerWidth &&
-      right > 0
-    );
   }
 
   handleScroll();

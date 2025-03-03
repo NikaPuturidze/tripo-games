@@ -34,6 +34,36 @@
         </ul>
       </nav>
 
+      <section id="send-cv">
+        <form class="vacancy" action="./game-designer.html">
+          <h5>Apply for a Position</h5>
+          <p>
+            Upload your CV and let us know why you're a great fit! We'll review
+            your application and get back to you soon.
+          </p>
+          <div class="names">
+            <div class="firstname">
+              <label for="firstname">First Name *</label>
+              <input type="text" id="firstname" required />
+            </div>
+            <div class="lastname">
+              <label for="lastname">Last Name *</label>
+              <input type="text" id="lastname" required />
+            </div>
+          </div>
+          <div class="email-v">
+            <label for="email-v">Email *</label>
+            <input type="email" id="email-v" required />
+          </div>
+          <div class="upload-v">
+            <label for="upload-v">Upload Your CV *</label>
+            <input type="file" id="upload-v" required />
+          </div>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+
       <section class="section-job-opening">
         <div class="over"></div>
         <header class="header">
@@ -75,7 +105,7 @@
           <h2>Game Desginer</h2>
           <p>Location: Houston</p>
           <p>Employment Type: Contract</p>
-          <button>Apply Now</button>
+          <button id="toggleCV">Apply Now</button>
         </div>
       </section>
       <section class="section-description">
