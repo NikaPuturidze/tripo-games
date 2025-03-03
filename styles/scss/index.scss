@@ -1166,7 +1166,7 @@ main {
             width: 100%;
             border-radius: 8px;
             border: 1px solid $black;
-            padding: 24px 16px;
+            padding: 16px;
             font-size: 16px;
           }
         }
@@ -1230,11 +1230,6 @@ main {
             background-color: $red;
             padding-inline: 16px;
             color: $white;
-
-            &:focus {
-              outline: none;
-              color: $white;
-            }
           }
         }
 

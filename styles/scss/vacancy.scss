@@ -237,14 +237,10 @@ main {
           }
 
           .to-career {
-            transition: all 0.3s ease;
             width: 116px;
             height: inherit;
-
-            &:hover {
-              background-color: $red;
-              color: $white;
-            }
+            background-color: $red;
+            color: $white;
           }
 
           .to-about {
