@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const grid = document.querySelector(".grid")
         const burgerNav = document.querySelector(".burger-nav")
         const main = document.querySelector("body")
+        const contactH = document.getElementById("contact-h")
 
         let isInHeader = false
 
@@ -94,6 +95,13 @@ document.addEventListener("DOMContentLoaded", () => {
             burgerNav.style.display = "none"
             main.style.overflow = "visible"
             grid.classList.remove("grid-t");
+        })
+
+        contactH.addEventListener("click", () => {
+            grid.classList.remove("grid-t");
+            main.style.overflow = "visible"
+            isInHeader = false
+            burgerNav.style.display = "none"
         })
 
         burger.addEventListener("click", () => {

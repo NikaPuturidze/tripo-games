@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         isInHeader = !isInHeader;
         main.style.overflow = "hidden";
         burgerNav.style.position = "fixed";
-        grid.classList.toggle("grid-t");
+        grid.classList.add("grid-t");
         burgerNav.classList.add("down-fast");
         burgerNav.style.display = "flex";
       } else {
