@@ -95,6 +95,7 @@ main {
       position: relative;
       z-index: 99999999;
       color: $darkBlue;
+      @include fadeShort;
 
       @media (width <=500px) {
         padding: 22px 18px;
